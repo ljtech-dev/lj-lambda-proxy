@@ -1,0 +1,29 @@
+[project]
+name = "lambda-proxy"
+version = "0.1.0"
+description = "TCP/HTTP proxy for local Lambda-style backends"
+readme = "README.md"
+authors = [
+    { name = "bglowney", email = "ben@ljtech.io" }
+]
+requires-python = ">=3.12"
+dependencies = []
+
+[project.scripts]
+lambda-proxy = "lambda_proxy:main"
+
+[build-system]
+requires = ["uv_build>=0.12.6,<0.13.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "mypy>=1.17.0",
+]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+warn_unreachable = true
+pretty = true
+files = ["src"]
